@@ -13,7 +13,8 @@
   ;; External interrupt IRQ (unused)
   .addr 0
 
-; "nes" linker config requires a STARTUP section, even if it's empty
+; "nes" linker config requires a STARTUP section, even  
+; if it's empty
 .segment "STARTUP"
 
 ; Main code segment for the program
@@ -84,18 +85,24 @@ nmi:
 @loop:	lda hello, x 	; Load the hello message into SPR-RAM
   sta $2004
   inx
-  cpx #$1c
+  cpx #$5c
   bne @loop
   rti
 
 hello:
   .byte $00, $00, $00, $00 	; Why do I need these here?
   .byte $00, $00, $00, $00
-  .byte $6c, $00, $00, $6c
-  .byte $6c, $01, $00, $76
-  .byte $6c, $02, $00, $80
-  .byte $6c, $02, $00, $8A
-  .byte $6c, $03, $00, $94
+
+  .byte $6c, $03, $00, $4e ;h 
+  .byte $6c, $04, $00, $58 ;e
+  .byte $6c, $05, $00, $62 ;l
+  .byte $6c, $05, $00, $6c ;l
+  .byte $6c, $01, $00, $76 ;o
+  .byte $6c, $00, $00, $8a
+  .byte $6c, $01, $00, $94
+  .byte $6c, $02, $00, $9e
+
+
 
 palettes:
   ; Background Palette
@@ -112,7 +119,37 @@ palettes:
 
 ; Character memory
 .segment "CHARS"
-  .byte %11000011	; H (00)
+  .byte %11111111	; T (00)
+  .byte %11111111
+  .byte %00011000
+  .byte %00011000
+  .byte %00011000
+  .byte %00011000
+  .byte %00011000
+  .byte %00011000
+  .byte $00, $00, $00, $00, $00, $00, $00, $00
+
+  .byte %11111111 ; O (01)
+  .byte %11111111
+  .byte %11000011
+  .byte %11000011
+  .byte %11000011
+  .byte %11000011
+  .byte %11111111
+  .byte %11111111
+  .byte $00, $00, $00, $00, $00, $00, $00, $00
+
+  .byte %11000011	; M (02)
+  .byte %11100111
+  .byte %11111111
+  .byte %11011011
+  .byte %11000011
+  .byte %11000011
+  .byte %11000011
+  .byte %11000011
+  .byte $00, $00, $00, $00, $00, $00, $00, $00
+
+  .byte %11000011	; H (03)
   .byte %11000011
   .byte %11000011
   .byte %11111111
@@ -122,7 +159,7 @@ palettes:
   .byte %11000011
   .byte $00, $00, $00, $00, $00, $00, $00, $00
 
-  .byte %11111111	; E (01)
+  .byte %11111111	; E (04)
   .byte %11111111
   .byte %11000000
   .byte %11111100
@@ -132,7 +169,7 @@ palettes:
   .byte %11111111
   .byte $00, $00, $00, $00, $00, $00, $00, $00
 
-  .byte %11000000	; L (02)
+  .byte %11000000	; L (05)
   .byte %11000000
   .byte %11000000
   .byte %11000000
@@ -140,14 +177,4 @@ palettes:
   .byte %11000000
   .byte %11111111
   .byte %11111111
-  .byte $00, $00, $00, $00, $00, $00, $00, $00
-
-  .byte %01111110	; O (03)
-  .byte %11100111
-  .byte %11000011
-  .byte %11000011
-  .byte %11000011
-  .byte %11000011
-  .byte %11100111
-  .byte %01111110
-  .byte $00, $00, $00, $00, $00, $00, $00, $00
+  .byte $00, $00, $00, $00, $00, $00, $00, $00  
