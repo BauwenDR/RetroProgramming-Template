@@ -4,3 +4,4 @@
 *.deb*
 *.lst*
 .DS_Store
+*.kate-swp
