@@ -16,12 +16,7 @@
           "isDefault": true
         },
         "problemMatcher": ["$ca65"],
-        "detail": "Assembles an NES project using cc65.",
-        "options": {
-          "env": {
-            "path": "${workspacefolder}/commandPaths.json"
-          }
-        }
+        "detail": "Assembles an NES project using cc65."
       },
       {
         "label": "Build NES",
@@ -36,12 +31,7 @@
         "group": "build",
         "dependsOn": "Assemble and Link NES",
         "problemMatcher": ["$ld65"],
-        "detail": "Links the NES object file to create a ROM.",
-        "options": {
-          "env": {
-            "path": "${workspacefolder}/commandPaths.json"
-          }
-        }
+        "detail": "Links the NES object file to create a ROM."
       }
     ]
   }
