@@ -1,2 +1,1 @@
-# RetroProgramming-Template
-Setup template for using Visual Studio Code and Mesen-X for NES programming and debugging.
+# Retro Console Programming Visual Studio Code Tempolate

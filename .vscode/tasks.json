@@ -1,0 +1,47 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "Assemble and Link NES",
+        "type": "shell",
+        "command": "path_to_cca5",
+        "args": [
+          "demo.s",
+          "-g",
+          "-o",
+          "demo.o"
+        ],
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        },
+        "problemMatcher": ["$ca65"],
+        "detail": "Assembles an NES project using cc65.",
+        "options": {
+          "env": {
+            "path": "${workspacefolder}/commandPaths.json"
+          }
+        }
+      },
+      {
+        "label": "Build NES",
+        "type": "shell",
+        "command": "path_to_ld65",
+        "args": [
+          "-t", "nes",
+          "-o", "demo.nes",
+          "demo.o",
+          "--dbgfile", "demo.dbg"
+        ],
+        "group": "build",
+        "dependsOn": "Assemble and Link NES",
+        "problemMatcher": ["$ld65"],
+        "detail": "Links the NES object file to create a ROM.",
+        "options": {
+          "env": {
+            "path": "${workspacefolder}/commandPaths.json"
+          }
+        }
+      }
+    ]
+  }
