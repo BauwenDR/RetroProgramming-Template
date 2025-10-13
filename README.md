@@ -1,4 +1,4 @@
-# Retro Console Programming Visual Studio Code Tempolate
+# Retro Console Programming Visual Studio Code Template
 ## Required Dependencies
 - Visual Studio Code ([link](https://code.visualstudio.com/download))
 - Mesen-X ([link](https://github.com/NovaSquirrel/Mesen-X/releases/tag/1.0.0))
@@ -21,7 +21,7 @@ We will extract the cc65 files to "C:/cc65".
 
 ## Configuring Visual Studio Code
 - Open the project in VsCode
-- Install the "Alchemy65" plugin (link)
+- Install the "Alchemy65" plugin ([link](https://marketplace.visualstudio.com/items?itemName=alchemic-raker.alchemy65))
 - Change Mesen-X path in ".vscode/launch.json"
 - Change cc65 paths in ".vscode/tasks.json"
 - Reboot Visual Studio Code (some config only gets applied after a reboot)
