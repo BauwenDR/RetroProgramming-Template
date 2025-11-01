@@ -13,11 +13,10 @@ We will download version 1.0.0 of Mesen-X. Mesen-X is a fork of the popular Mese
 #### Downloading
 ![cc65 webstite instruction](./doc/cc65.png)
 
-#### Extracting
+#### Extracting (Windows only)
 We will extract the cc65 files to "C:/cc65".
 
 ![cc65 webstite extracting](./doc/cc65-extract.png)
-
 
 ## Configuring Visual Studio Code
 - Open the project in VsCode
@@ -25,6 +24,11 @@ We will extract the cc65 files to "C:/cc65".
 - Change Mesen-X path in ".vscode/launch.json"
 - Change cc65 paths in ".vscode/tasks.json"
 - Reboot Visual Studio Code (some config only gets applied after a reboot)
+
+### Linux
+Downloading the Linux version of Mesen-X from Github will still provide you with an .exe file. Thus, Mono (or any other Windows compatibility layer that includes dotnet runtime) is required.
+
+There is a sh file present in the repo (luanch-mesen.sh). In order to be capable of launching Mesen-X you need to modify the path of Mesen in that shell script. And put the shell script as the Mesen-X path in ".vscode/launch.json" using `${workspaceFolder}/launch-mesen.sh`.
 
 ## Running the project
 - Go to 'Run and Debug'

@@ -4,7 +4,7 @@
       {
         "label": "Assemble and Link NES",
         "type": "shell",
-        "command": "path_to_cca5",
+        "command": "path_to_ca65",
         "args": [
           "demo.s",
           "-g",
@@ -15,7 +15,6 @@
           "kind": "build",
           "isDefault": true
         },
-        "problemMatcher": ["$ca65"],
         "detail": "Assembles an NES project using cc65."
       },
       {
@@ -30,7 +29,6 @@
         ],
         "group": "build",
         "dependsOn": "Assemble and Link NES",
-        "problemMatcher": ["$ld65"],
         "detail": "Links the NES object file to create a ROM."
       }
     ]
